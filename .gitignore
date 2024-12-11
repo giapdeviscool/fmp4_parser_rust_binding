@@ -1,0 +1,6 @@
+/target
+/jniLibs
+bindingLibs.zip
+bindingLibs
+out.zip
+.DS_Store

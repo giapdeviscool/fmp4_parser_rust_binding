@@ -1,0 +1,6 @@
+namespace binding_ffi {
+    u32 add_test_two_numbers(u32 a, u32 b);
+};
+
+
+

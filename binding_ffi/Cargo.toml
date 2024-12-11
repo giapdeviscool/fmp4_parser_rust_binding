@@ -1,0 +1,23 @@
+[package]
+name = "binding_ffi"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["lib", "cdylib", "staticlib", "rlib"]
+
+[dependencies]
+uniffi = { version = "0.28.0", features = ["tokio", "cli"] }
+uniffi_macros = "0.28.0"
+thiserror = {workspace = true}
+o_thi_offline_search ={ workspace = true}
+
+
+
+
+[build-dependencies]
+uniffi = { version = "0.28.0", features = [ "build" ] }
+
+[[bin]]
+name = "uniffi-bindgen"
+path = "src/bin.rs"
