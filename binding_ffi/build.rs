@@ -1,3 +1,3 @@
 fn main() {
-    uniffi::generate_scaffolding("src/binding_ffi.udl").unwrap();
+    // uniffi::generate_scaffolding("./src/ermis_call.udl").unwrap();
 }

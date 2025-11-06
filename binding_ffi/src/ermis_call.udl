@@ -1,0 +1,45 @@
+namespace ermis_call {};
+
+[Enum]
+enum ConnectionTypeWrapper {
+    "Direct",
+    "Relay",
+    "Mixed",
+    "None",
+};
+
+[Record]
+dictionary ConnectionStats {
+    ConnectionTypeWrapper? connection_type;
+    u64? round_trip_time_ms;
+    double? packet_loss;
+};
+
+[Object]
+interface ErmisCallEndpoint {
+    [Throws=string, Constructor]
+    constructor(sequence<string> relay_urls);
+    
+    [Throws=string]
+    void connect(string addr);
+    
+    [Throws=string]
+    string get_local_endpoint_addr();
+    
+    [Throws=string]
+    void accept_connection();
+    
+    [Throws=string]
+    void accept_bidi_stream();
+    
+    [Throws=string]
+    void open_bidi_stream();
+    
+    [Throws=string]
+    void send(sequence<u8> data);
+    
+    [Throws=string]
+    sequence<u8> recv();
+    
+    ConnectionStats get_connection_stats();
+};

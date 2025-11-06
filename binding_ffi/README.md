@@ -40,7 +40,7 @@ cd ../
 
 ```sh
    
-   cargo run --bin uniffi-bindgen generate --library target/release/libbinding_ffi.so --language kotlin --out-dir out
+   cargo run --bin uniffi-bindgen generate --library target/x86_64-linux-android/release/libbinding_ffi.so --language kotlin --out-dir out
 ```
 
 then check out the out folder
