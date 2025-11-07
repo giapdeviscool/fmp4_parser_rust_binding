@@ -1,4 +1,0 @@
-module binding_ffiFFI {
-    header "binding_ffiFFI.h"
-    export *
-}

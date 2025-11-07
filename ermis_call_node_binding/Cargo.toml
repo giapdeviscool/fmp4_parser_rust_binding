@@ -1,10 +1,10 @@
 [package]
-name = "binding_ffi"
+name = "ermis_call_node_binding"
 version = "0.1.0"
 edition = "2021"
 
 [lib]
-crate-type = ["lib", "cdylib", "staticlib", "rlib"]
+crate-type = ["cdylib", "staticlib", "rlib"]
 
 [dependencies]
 uniffi = { version = "0.28.0", features = ["tokio", "cli"] }

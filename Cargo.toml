@@ -1,11 +1,10 @@
 [workspace]
 
 members = [
-	"binding_ffi",  "ermis-call-node"
+	"ermis_call_node_binding",  "ermis-call-node"
 ]
 
 [workspace.dependencies]
 tokio = { version = "1.35.1", features = ["macros"] }
 thiserror = "2.0.3"
-# o_thi_offline_search = { path = "o_thi_offline_search" }
 ermis-call-node = { path = "ermis-call-node" }

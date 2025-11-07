@@ -5,3 +5,5 @@ bindingLibs
 out.zip
 .DS_Store
 /jniLibs1
+/ermis-call-node/*
+/out/*

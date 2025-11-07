@@ -306,24 +306,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "binding_ffi"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "base64 0.21.7",
- "bitcode",
- "ermis-call-node",
- "futures",
- "iroh",
- "iroh-quinn-proto",
- "thiserror 2.0.17",
- "tokio",
- "tokio-util",
- "uniffi",
- "uniffi_macros",
-]
-
-[[package]]
 name = "bitcode"
 version = "0.6.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -927,6 +909,24 @@ dependencies = [
  "iroh-quinn-proto",
  "tokio",
  "tokio-util",
+]
+
+[[package]]
+name = "ermis_call_node_binding"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "base64 0.21.7",
+ "bitcode",
+ "ermis-call-node",
+ "futures",
+ "iroh",
+ "iroh-quinn-proto",
+ "thiserror 2.0.17",
+ "tokio",
+ "tokio-util",
+ "uniffi",
+ "uniffi_macros",
 ]
 
 [[package]]

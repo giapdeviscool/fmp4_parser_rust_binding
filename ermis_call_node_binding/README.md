@@ -64,7 +64,7 @@ mkdir -p jniLibs1/arm64-v8a/ && \
 4. generate swift interface file
 
 ```sh
-cargo run --bin uniffi-bindgen generate --library target/aarch64-apple-ios/debug/libermis_ffi.dylib --language swift --out-dir out/ios
+cargo run --bin uniffi-bindgen generate --library target/aarch64-apple-ios/debug/libbinding_ffi.dylib --language swift --out-dir out/ios
 ```
 
 ```sh
@@ -76,21 +76,3 @@ mkdir -p bindingLibs/aarch64-apple-ios/ && \
     cp target/x86_64-apple-ios/release/libbinding_ffi.a bindingLibs/x86_64-apple-ios/libbinding_ffi.a
 ```
 
-- test
-
-1. create client with wallet and db_path
-   client = createClient(db_path,null,accountAddress, name)
-2. export client_key_package
-   keyPackage vec<u8> (bytes) = client.keyPackage()
-3. create group
-   group1 {group_id,proposal, commit, welcome} = client.createGroupWithGroupIdAndMembers(group_id: string, vec<keyPackage>)
-4. check group
-   group_id : vec<u8> bytes = group.group.checkGroupId() -> decode to string
-5. export group ratchet tree
-   ratchettree : vec<u8> (bytes) = group1.group.exportRatchetTree()
-6. join from invite
-   group2 = client.joinGroupByWelcome(group1.welcome, ratchettree)
-7. check group2 id
-   group2_id : vec<u8> bytes = group.group.checkGroupId() -> decode to string
-8. load_group:
-   group: group_id: vec<u8>
