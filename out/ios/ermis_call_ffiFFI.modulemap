@@ -1,4 +1,0 @@
-module ermis_call_ffiFFI {
-    header "ermis_call_ffiFFI.h"
-    export *
-}

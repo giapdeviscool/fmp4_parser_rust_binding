@@ -1,0 +1,4 @@
+[swift]
+module_name = "ErmisCallNodeFFI"
+ffi_module_name = "ErmisCallNodeFFI"
+ffi_module_filename = "ErmisCallNodeFFI"
