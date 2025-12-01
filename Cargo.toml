@@ -1,10 +1,10 @@
 [workspace]
-
+resolver = "3"
 members = [
-	"ermis_call_node_binding",  "ermis-call-node"
+	"ermis_call_node_binding",  "fmp4_demuxer_lib"
 ]
 
 [workspace.dependencies]
-tokio = { version = "1.35.1", features = ["macros"] }
 thiserror = "2.0.3"
-ermis-call-node = { path = "ermis-call-node" }
+fmp4_demuxer_lib = { path = "fmp4_demuxer_lib" }
+

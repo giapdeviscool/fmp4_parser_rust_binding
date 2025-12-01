@@ -15,14 +15,14 @@ echo "=============================="
 rm -rf "$BUILD_DIR"
 mkdir -p "$SWIFT_DIR"
 
-# Step 1: Install uniffi-bindgen if not already installed
-echo "📦 Checking for uniffi-bindgen..."
-if ! command -v uniffi-bindgen &> /dev/null; then
-    echo "Installing uniffi-bindgen..."
-    cargo install uniffi-bindgen --version 0.28.0
-else
-    echo "✓ uniffi-bindgen already installed"
-fi
+## Step 1: Install uniffi-bindgen if not already installed
+#echo "📦 Checking for uniffi_bindgen..."
+#if ! command -v uniffi_bindgen &> /dev/null; then
+#    echo "Installing uniffi-bindgen..."
+#    cargo install uniffi-bindgen --version 0.28.0
+#else
+#    echo "✓ uniffi_bindgen already installed"
+#fi
 
 # Step 2: Build for macOS (needed for bindgen)
 echo "💻 Building for macOS..."
@@ -36,7 +36,7 @@ echo "⚡ Generating Swift bindings..."
 # Method A: Using the built library directly
 if [ -f "target/release/lib${LIB_NAME}.dylib" ]; then
     echo "Attempting with .dylib..."
-    uniffi-bindgen generate \
+    cargo run --bin uniffi-bindgen generate \
         --library target/release/lib${LIB_NAME}.dylib \
         --language swift \
         --out-dir "$SWIFT_DIR" 2>/dev/null || true
@@ -45,7 +45,7 @@ fi
 # Method B: Using the static library
 if [ ! -f "$SWIFT_DIR/${LIB_NAME}.swift" ] && [ -f "target/release/lib${LIB_NAME}.a" ]; then
     echo "Attempting with .a..."
-    uniffi-bindgen generate \
+    cargo run --bin uniffi-bindgen generate \
         --library target/release/lib${LIB_NAME}.a \
         --language swift \
         --out-dir "$SWIFT_DIR" 2>/dev/null || true
@@ -56,9 +56,9 @@ if [ ! -f "$SWIFT_DIR/${LIB_NAME}.swift" ]; then
     echo "Attempting with cargo build as cdylib..."
     # Ensure cdylib is built
     cargo build --release
-    
+
     if [ -f "target/release/lib${LIB_NAME}.dylib" ]; then
-        uniffi-bindgen generate \
+        cargo run --bin uniffi-bindgen generate \
             --library target/release/lib${LIB_NAME}.dylib \
             --language swift \
             --out-dir "$SWIFT_DIR"

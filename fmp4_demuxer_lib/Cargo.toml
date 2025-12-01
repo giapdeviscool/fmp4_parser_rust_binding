@@ -1,0 +1,15 @@
+[package]
+name = "fmp4_demuxer_lib"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+mp4-atom= "0.9.0"
+serde = { version = "1.0.227", features = ["derive"] }
+bytes = "1.10.1"
+anyhow = "1.0.71"
+
+
+[lib]
+name = "fmp4_demuxer_lib"
+crate-type = ["cdylib", "rlib", "staticlib"]
