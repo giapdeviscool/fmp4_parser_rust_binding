@@ -6,7 +6,7 @@ LIB_NAME="ermis_call_node_binding"
 PROJECT_DIR=$(pwd)
 BUILD_DIR="$PROJECT_DIR/out/ios"
 SWIFT_DIR="$BUILD_DIR/swift"
-PACKAGE_NAME="ErmisCallNode"
+PACKAGE_NAME="ErmisFmp4Parser"
 
 echo "🦀 Simple UniFFI Build Script"
 echo "=============================="
